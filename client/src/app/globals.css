@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-page: #f8fafc;
+  --panel-bg: #ffffff;
+  --border-color: #e2e8f0;
+  --border-dark: #cbd5e1;
+  --primary-accent: #15803d;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+}
+
+body {
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Force 3px radius on elements unless explicitly rounded-none or rounded-full */
+button, input, select, textarea, .panel-card, .btn-action {
+  border-radius: 3px !important;
+}
+
+/* Enforce tabular figures for all numeric, financial, and table data */
+.tabular-nums, table, td, th, .num-stat {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Print CSS for invoice printing */
+@media print {
+  body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .invoice-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-shadow: none !important;
+    border: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
